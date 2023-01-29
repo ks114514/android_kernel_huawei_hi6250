@@ -311,8 +311,8 @@ else
 HOSTCC       = $(CCACHE) gcc
 endif
 HOSTCXX      = $(CCACHE) g++
-HOSTCFLAGS   := -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer -std=gnu89
-HOSTCXXFLAGS = -O2
+HOSTCFLAGS   := -Wall -Wmissing-prototypes -Wstrict-prototypes -O1 -fomit-frame-pointer -std=gnu89
+HOSTCXXFLAGS = -O1
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -790,9 +790,9 @@ export DISABLE_CFI
 endif
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-KBUILD_CFLAGS   += -Os
+KBUILD_CFLAGS   += -O1
 else
-KBUILD_CFLAGS   += -O2
+KBUILD_CFLAGS   += -O1
 endif
 
 # Tell gcc to never replace conditional load with a non-conditional one
